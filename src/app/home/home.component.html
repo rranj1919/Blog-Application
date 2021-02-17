@@ -1,0 +1,26 @@
+<div class="container" style="text-align:center" >
+    <div class="row" style="text-align:center">
+        <div class="col-md-12" style="font-size: 22px">All Blogs</div>
+        <br> <br> <br> <br>
+    </div>
+    <div class ="row" style="text-align: center;margin:auto" *ngIf ="allBlogs.length>0" >
+        <!--iterative div strts here-->
+    <div *ngFor="let blog of allBlogs" class="col-md-4">
+        <div class="card text-center">
+            <div class="card-header">
+                {{blog.title | uppercase}} </div>
+            <div class="card-body">
+                <p class="card-title">{{blog.description}}</p>
+            </div>
+            <div class="card-footer text-muted">
+              posted by  {{blog.author}} on {{blog.created | date}} <br>
+                <a [routerLink] ="['/blog',blog.blogId]"href="#" class="btn btn-primary">click to read</a>
+                <br><br> 
+            </div>
+            <!--ends here iterative div-->
+        </div>
+    </div>
+
+
+    </div>
+</div>
